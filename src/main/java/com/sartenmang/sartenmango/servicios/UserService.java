@@ -52,6 +52,9 @@ public class UserService {
             if (user.getBirthtDay() != null) {
                 oUser.get().setBirthtDay(user.getBirthtDay());
             }
+            if (user.getIdentification() != null) {
+                oUser.get().setIdentification(user.getIdentification());
+            }
             if (user.getMonthBirthtDay() != null) {
                 oUser.get().setMonthBirthtDay(user.getMonthBirthtDay());
             }
