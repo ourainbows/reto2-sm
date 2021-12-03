@@ -34,7 +34,8 @@ function signIn() {
     password: $("#password").val()
   }
   $.ajax({
-    url: "http://150.230.86.64:81/api/user/new",
+    url: "http://localhost:8080/api/user/new",
+    //url: "http://150.230.86.64:81/api/user/new",
     type: "POST",
     data: JSON.stringify(user),
     contentType: "application/JSON",

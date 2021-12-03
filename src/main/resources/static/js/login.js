@@ -27,7 +27,8 @@
 function logIn() {
   $.ajax({
     url:
-      "http://150.230.86.64:81/api/user/" +
+      "http://localhost:8080/api/user/" +
+      //"http://150.230.86.64:81/api/user/" +
       $("#email-login").val() +
       "/" +
       $("#password-login").val(),
@@ -36,6 +37,12 @@ function logIn() {
     success: function (answer) {
       if (answer.name != "NO DEFINIDO") {
         $("#estadoUsuario").text("Sesión Iniciada correctamente");
+        if (answer.type == "ADM") {
+          $(location).attr("href", "admin.html");
+        }
+        if (answer.type == "COORD" || answer.type == "ASE") {
+          $(location).attr("href", "user.html");
+        }
       } else {
         $("#estadoUsuario").text("Su correo o contraseña es incorrecto");
       }
