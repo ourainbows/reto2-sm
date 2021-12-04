@@ -38,7 +38,7 @@ function drawUsers(items) {
   let userTable = "<table>";
   for (i = 0; i < items.length; i++) {
     userTable += "<tr>";
-
+    /* userTable += "<th scope='row'>" */
     userTable += "<td>" + items[i].id + "</td>";
     userTable += "<td>" + items[i].identification + "</td>";
     userTable += "<td>" + items[i].name + "</td>";
@@ -49,9 +49,13 @@ function drawUsers(items) {
     userTable += "<td>" + items[i].zone + "</td>";
     userTable += "<td>" + items[i].type + "</td>";
     userTable +=
-      "<td> <button onclick='selectUser("+JSON.stringify(items[i].email) +","+JSON.stringify(items[i].password) + ")'>Editar</button></td>";
+      "<td> <button class='btn btn-outline-secondary' onclick='selectUser(" +
+      JSON.stringify(items[i].email) +
+      "," +
+      JSON.stringify(items[i].password) +
+      ")'>Editar</button></td>";
     userTable +=
-      '<td> <button onclick="deleteUser(' +
+      '<td> <button class="btn btn-outline-danger" onclick="deleteUser(' +
       JSON.stringify(items[i].id) +
       ')">Borrar</button></td>';
 
@@ -76,7 +80,9 @@ function createUser() {
     type: "POST",
     data: JSON.stringify(data),
     contentType: "application/JSON",
-    complete: function () {
+      complete: function () {
+        clearInputs();
+        getUsers();
     },
   });
 }
@@ -87,7 +93,6 @@ function selectUser(email, password) {
     type: "GET",
     dataType: "json",
     success: function (answer) {
-      console.log(answer);
       $("#id-user").val(answer.id),
         $("#identification-user").val(answer.identification),
         $("#name-user").val(answer.name),
@@ -95,8 +100,8 @@ function selectUser(email, password) {
         $("#cellPhone-user").val(answer.cellPhone),
         $("#email-user").val(answer.email),
         $("#password-user").val(answer.password),
-        $("#zone-user").val(answer.zone);
-      $("#type-user").val(answer.type);
+        $("#zone-user").val(answer.zone),
+        $("#type-user").val(answer.type);
     },
   });
 }
@@ -120,6 +125,8 @@ function updateUser() {
     dataType: "json",
     complete: function () {
       console.log("Usuario Actualizado");
+      clearInputs();
+      getUsers();
     },
   });
 }
@@ -136,7 +143,21 @@ function deleteUser(idUser) {
     dataType: "json",
     success: function () {
       console.log("Dato eliminado");
+      clearInputs();
+      getUsers();
     },
   });
 }
-selectUser("hot@hot.com", "hot");
+function clearInputs() {
+  $("#id-user").val(""),
+    $("#identification-user").val(""),
+    $("#name-user").val(""),
+    $("#address-user").val(""),
+    $("#cellPhone-user").val(""),
+    $("#email-user").val(""),
+    $("#password-user").val(""),
+    $("#zone-user").val(""),
+    $("#type-user").val("");
+}
+
+getUsers();
