@@ -16,7 +16,7 @@
   <body>
     <main>
       <div class="table-responsive">
-        <table class="table" id="cookware-table">
+        <table class="table">
           <thead class="table-dark">
             <tr>
               <th scope="col">Rerencia</th>
@@ -29,6 +29,8 @@
               <th scope="col">Precio</th>
               <th scope="col">Cantidad</th>
               <th scope="col">Fotografia</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Borrar</th>
             </tr>
           </thead>
           <tbody id="cookware-table"></tbody>
@@ -37,38 +39,97 @@
       <div class="container">
         <form action="" class="needs-validation" novalidate>
           <div class="form-group">
-            <input placeholder="Referencia" type="text" id="CReference" required />
+            <input
+              placeholder="Referencia"
+              type="text"
+              id="CReference"
+              class="form-control"
+              required
+            />
           </div>
           <div class="form-group">
-            <input placeholder="Marca" type="text" id="CBrand" required />
+            <input
+              placeholder="Marca"
+              type="text"
+              id="CBrand"
+              class="form-control"
+              required
+            />
           </div>
           <div class="form-group">
-            <input placeholder="Categoria" type="text" id="CCategory" required />
+            <input
+              placeholder="Categoria"
+              type="text"
+              id="CCategory"
+              class="form-control"
+              required
+            />
           </div>
           <div class="form-group">
-            <input placeholder="Materiales" type="text" id="CMateriales" required />
+            <input
+              placeholder="Materiales"
+              type="text"
+              id="CMateriales"
+              class="form-control"
+              required
+            />
           </div>
           <div class="form-group">
-            <input placeholder="Dimensiones" type="text" id="CDimensiones" required />
+            <input
+              placeholder="Dimensiones"
+              type="text"
+              id="CDimensiones"
+              class="form-control"
+              required
+            />
           </div>
           <div class="form-group">
-            <input placeholder="Descripcion" type="text" id="CDescription" required />
+            <input
+              placeholder="Descripcion"
+              type="text"
+              id="CDescription"
+              class="form-control"
+              required
+            />
           </div>
           <div class="form-group">
-            <select type="text" id="CAvaliability" required>
+            <select
+              type="text"
+              id="CAvaliability"
+              class="form-control"
+              required
+            >
               <option selected disabled value="">Disponibilidad</option>
               <option value="true">Disponible</option>
-              <option value="true">Agotado</option>
+              <option value="false">Agotado</option>
             </select>
           </div>
           <div class="form-group">
-            <input placeholder="Precio" type="number" id="CPrice" required />
+            <input
+              placeholder="Precio"
+              type="number"
+              id="CPrice"
+              class="form-control"
+              required
+            />
           </div>
           <div class="form-group">
-            <input placeholder="Cantidad" type="number" id="CQuantity" required />
+            <input
+              placeholder="Cantidad"
+              type="number"
+              id="CQuantity"
+              class="form-control"
+              required
+            />
           </div>
           <div class="form-group">
-            <input placeholder="Url Fotografia" type="url" id="CPhotography" required />
+            <input
+              placeholder="Url Fotografia"
+              type="url"
+              id="CPhotography"
+              class="form-control"
+              required
+            />
           </div>
           <button type="submit" class="btn btn-primary">Registrar</button>
           <button class="btn btn-primary" onclick="updateTool()">
@@ -77,7 +138,9 @@
         </form>
       </div>
     </main>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script
+      <script
       type="text/javascript"
       src="/webjars/bootstrap/js/bootstrap.min.js"
     ></script>

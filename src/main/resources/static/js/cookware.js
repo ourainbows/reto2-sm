@@ -36,9 +36,10 @@ function getTools() {
 }
 
 function drawTools(tools) {
-  let toolsTabel = "<table";
+  let toolsTabel = "<table>";
+  console.log(tools.length);
   for (i = 0; i < tools.length; i++) {
-    toolsTabel = "<tr>";
+    toolsTabel += "<tr>";
 
     toolsTabel += "<th>" + tools[i].reference + "</th>";
     toolsTabel += "<td>" + tools[i].brand + "</td>";
@@ -46,18 +47,18 @@ function drawTools(tools) {
     toolsTabel += "<td>" + tools[i].materiales + "</td>";
     toolsTabel += "<td>" + tools[i].dimensiones + "</td>";
     toolsTabel += "<td>" + tools[i].description + "</td>";
-    toolsTabel += "<td>" + tools[i].avalibility + "</td>";
+    toolsTabel += "<td>" + tools[i].availability + "</td>";
     toolsTabel += "<td>" + tools[i].price + "</td>";
     toolsTabel += "<td>" + tools[i].quantity + "</td>";
     toolsTabel += "<td>" + tools[i].photography + "</td>";
     toolsTabel +=
       "<td><button class='btn btn-outline-secondary' onclick='getTool(" +
       JSON.stringify(tools[i].reference) +
-      ")>Editar</button></td>";
+      ")'>Editar</button></td>";
     toolsTabel +=
-      "<td><button class='btn btn-outline-secondary' onclick='deleteTool(" +
+      "<td><button class='btn btn-outline-danger' onclick='deleteTool(" +
       JSON.stringify(tools[i].reference) +
-      ")>Borrar</button></td>";
+      ")'>Borrar</button></td>";
 
     toolsTabel += "</tr>";
     $("#cookware-table").html(toolsTabel);
@@ -72,7 +73,7 @@ function createTool() {
     materiales: $("#CMateriales").val(),
     dimensiones: $("#CDimensiones").val(),
     description: $("#CDescription").val(),
-    avalibility: $("#CAvaliability").val(),
+    availability: $("#CAvaliability").val(),
     price: $("#CPrice").val(),
     quantity: $("#CQuantity").val(),
     photography: $("#CPhotography").val(),
@@ -98,7 +99,7 @@ function updateTool() {
     materiales: $("#CMateriales").val(),
     dimensiones: $("#CDimensiones").val(),
     description: $("#CDescription").val(),
-    avalibility: $("#CAvaliability").val(),
+    availability: $("#CAvaliability").val(),
     price: $("#CPrice").val(),
     quantity: $("#CQuantity").val(),
     photography: $("#CPhotography").val(),
