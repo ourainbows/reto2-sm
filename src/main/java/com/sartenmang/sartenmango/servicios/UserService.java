@@ -49,14 +49,14 @@ public class UserService {
             if (user.getName() != null) {
                 oUser.get().setName(user.getName());
             }
-            if (user.getBirthtDay() != null) {
+/*             if (user.getBirthtDay() != null) {
                 oUser.get().setBirthtDay(user.getBirthtDay());
-            }
-            if (user.getIdentification() != null) {
-                oUser.get().setIdentification(user.getIdentification());
             }
             if (user.getMonthBirthtDay() != null) {
                 oUser.get().setMonthBirthtDay(user.getMonthBirthtDay());
+            } */
+            if (user.getIdentification() != null) {
+                oUser.get().setIdentification(user.getIdentification());
             }
             if (user.getAddress() != null) {
                 oUser.get().setAddress(user.getAddress());
