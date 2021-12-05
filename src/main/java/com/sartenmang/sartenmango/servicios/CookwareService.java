@@ -45,7 +45,7 @@ public class CookwareService {
                     opTool.get().setMateriales(tool.getMateriales());
                 }
                 if (tool.getDimensiones() != null) {
-                    opTool.get().setMateriales(tool.getMateriales());
+                    opTool.get().setDimensiones(tool.getDimensiones());
                 }
                 if (tool.getDescription() != null) {
                     opTool.get().setDescription(tool.getDescription());
