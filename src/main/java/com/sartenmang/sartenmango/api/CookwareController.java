@@ -2,6 +2,7 @@ package com.sartenmang.sartenmango.api;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import com.sartenmang.sartenmango.entidades.Cookware;
 import com.sartenmang.sartenmango.servicios.CookwareService;
@@ -28,6 +29,11 @@ public class CookwareController {
     @GetMapping("/all")
     public List<Cookware> getAll() {
         return cService.getTools();
+    }
+
+    @GetMapping("/{reference}")
+    public Optional<Cookware> utensilio(@PathVariable("reference") String reference) {
+        return cService.getTool(reference);
     }
 
     @PostMapping("/new")

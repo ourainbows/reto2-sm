@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="robots" content="index,follow" />
+    <title>Cookware Crud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/webjars/bootstrap/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="table-responsive">
+        <table class="table" id="cookware-table">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Rerencia</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Materiales</th>
+              <th scope="col">Dimensiones</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Disponibilidad</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Fotografia</th>
+            </tr>
+          </thead>
+          <tbody id="cookware-table"></tbody>
+        </table>
+      </div>
+      <div class="container">
+        <form action="" class="needs-validation" novalidate>
+          <div class="form-group">
+            <input placeholder="Referencia" type="text" id="CReference" required />
+          </div>
+          <div class="form-group">
+            <input placeholder="Marca" type="text" id="CBrand" required />
+          </div>
+          <div class="form-group">
+            <input placeholder="Categoria" type="text" id="CCategory" required />
+          </div>
+          <div class="form-group">
+            <input placeholder="Materiales" type="text" id="Cmateriales" required />
+          </div>
+          <div class="form-group">
+            <input placeholder="Dimensiones" type="text" id="CDimensiones" required />
+          </div>
+          <div class="form-group">
+            <input placeholder="Descripcion" type="text" id="CDescription" required />
+          </div>
+          <div class="form-group">
+            <select type="text" id="CAvaliability" required>
+              <option selected disabled value="">Disponibilidad</option>
+              <option value="true">Disponible</option>
+              <option value="true">Agotado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input placeholder="Precio" type="number" id="CPrice" required />
+          </div>
+          <div class="form-group">
+            <input placeholder="Cantidad" type="number" id="CQuantity" required />
+          </div>
+          <div class="form-group">
+            <input placeholder="Url Fotografia" type="url" id="CPhotography" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Registrar</button>
+          <button class="btn btn-primary" onclick="updateTool()">
+            Actualizar
+          </button>
+        </form>
+      </div>
+    </main>
+    <script
+      type="text/javascript"
+      src="/webjars/bootstrap/js/bootstrap.min.js"
+    ></script>
+    <script src="./js/cookware.js"></script>
+  </body>
+</html>

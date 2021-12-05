@@ -39,7 +39,7 @@ function drawUsers(items) {
   for (i = 0; i < items.length; i++) {
     userTable += "<tr>";
     /* userTable += "<th scope='row'>" */
-    userTable += "<td>" + items[i].id + "</td>";
+    userTable += "<th>" + items[i].id + "</td>";
     userTable += "<td>" + items[i].identification + "</td>";
     userTable += "<td>" + items[i].name + "</td>";
     userTable += "<td>" + items[i].address + "</td>";
