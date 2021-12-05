@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+body {
+  background-color: #f3e0e2;
+}
+
+.container {
+  padding-top: 150px;
+}
+#main-card,#card-crud {
+  box-shadow: 5px 5px 5px 5px #a99b9d;
+  border: 0;
+}
+#card-crud{
+    box-shadow: 2px 2px 2px 2px  #a99b9d;
+}
+#btn-crud,#card-header,#card-header-main  {
+  background-image: linear-gradient(
+    to right,
+    #ff464c,
+    #ff4454,
+    #ff425b,
+    #ff4163,
+    #ff416a
+  );
+  color: white;
+  border-color: #ff4163;
+}
+#card-header-main, #main-card{
+    text-align: center;
+}

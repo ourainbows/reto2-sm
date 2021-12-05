@@ -1,15 +1,71 @@
 <!DOCTYPE html>
-<htmL lang="es">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="description" content=""/>
-        <meta name="robots" content="index,follow"/>
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <a href="crud-user.html" ><button>USUARIOS</button></a>
-        <a href="crud-cookware.html" ><button>UTENSILIOS</button></a>
-    </body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="robots" content="index,follow" />
+    <title>Opciones Administrador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/webjars/bootstrap/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="card" id="main-card">
+           <div id="card-header-main" class="card-header">Bienvenido Administrador</div>
+          <div class="card-body">
+            <p>Seleccione una carta para comenzar a modificar la informacion:</p>
+            <div class="row">
+              <div class="col">
+                <div
+                  id="card-crud"
+                  class="card border-dark mb-3"
+                  
+                >
+                  <div id="card-header" class="card-header">Utensilios</div>
+                  <div class="card-body">
+                    <!-- <h5 class="card-title">INFO UTENSILIOS</h5> -->
+                    <p class="card-text">
+                      Crear, visualizar, borrar y actualizar toda la información
+                      relacionada con los utensilios
+                    </p>
+                    <a href="crud-cookware.html"
+                      ><button id="btn-crud" class="btn btn-dark btn-lg ">
+                        Utensilios
+                      </button></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  id="card-crud"
+                  class="card border-dark  mb-3"
+                >
+                  <div id="card-header"class="card-header">Usuarios</div>
+                  <div class="card-body">
+                    <!-- <h5 class="card-title">INFO USUARIOS</h5> -->
+                    <p class="card-text">
+                      Crear, visualizar, borrar y actualizar toda la información
+                      relacionada con los usuarios
+                    </p>
+                    <a href="crud-user.html"
+                      ><button id="btn-crud" class="btn btn-dark btn-lg ">
+                        Usuarios
+                      </button></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

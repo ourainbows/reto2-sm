@@ -68,3 +68,12 @@ form {
 .about p {
   margin-top: 10px;
 }
+
+/* CSS */
+button{
+  background-color: red;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+
+}
+
+
