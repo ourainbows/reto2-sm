@@ -38,6 +38,27 @@ public class CookwareService {
                 if (tool.getBrand() != null) {
                     opTool.get().setBrand(tool.getBrand());
                 }
+                if (tool.getCategory() != null) {
+                    opTool.get().setCategory(tool.getCategory());
+                }
+                if (tool.getMateriales() != null) {
+                    opTool.get().setMateriales(tool.getMateriales());
+                }
+                if (tool.getDimensiones() != null) {
+                    opTool.get().setMateriales(tool.getMateriales());
+                }
+                if (tool.getDescription() != null) {
+                    opTool.get().setDescription(tool.getDescription());
+                }
+                if (tool.getPrice() != 0.0) {
+                    opTool.get().setPrice(tool.getPrice());
+                }
+                if (tool.getQuantity() >= 0) {
+                    opTool.get().setQuantity(tool.getQuantity());
+                }
+                if (tool.getPhotography() != null) {
+                    opTool.get().setPhotography(tool.getPhotography());
+                }
                 opTool.get().setAvailability(tool.isAvailability());
                 cRepository.updateTool(opTool.get());
                 return opTool.get();

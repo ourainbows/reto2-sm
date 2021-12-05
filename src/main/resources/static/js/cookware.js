@@ -37,7 +37,6 @@ function getTools() {
 
 function drawTools(tools) {
   let toolsTabel = "<table>";
-  console.log(tools.length);
   for (i = 0; i < tools.length; i++) {
     toolsTabel += "<tr>";
 
@@ -50,7 +49,7 @@ function drawTools(tools) {
     toolsTabel += "<td>" + tools[i].availability + "</td>";
     toolsTabel += "<td>" + tools[i].price + "</td>";
     toolsTabel += "<td>" + tools[i].quantity + "</td>";
-    toolsTabel += "<td>" + tools[i].photography + "</td>";
+    /* toolsTabel += "<td>" + tools[i].photography + "</td>"; */
     toolsTabel +=
       "<td><button class='btn btn-outline-secondary' onclick='getTool(" +
       JSON.stringify(tools[i].reference) +
@@ -84,7 +83,6 @@ function createTool() {
     data: JSON.stringify(tool),
     contentType: "application/JSON",
     complete: function () {
-      console.log("Herramienta creada");
       getTools();
       clearInputs();
     },
@@ -111,7 +109,6 @@ function updateTool() {
     contentType: "application/JSON",
     dataType: "JSON",
     complete: function () {
-      console.log("Herramienta actualizada");
       getTools();
       clearInputs();
     },
@@ -129,7 +126,6 @@ function deleteTool(reference) {
     contentType: "application/JSON",
     dataType: "JSON",
     success: function () {
-      console.log("Herramienta Eliminada");
       getTools();
     },
   });
@@ -150,7 +146,7 @@ function getTool(reference) {
         $("#CMateriales").val(answer.materiales),
         $("#CDimensiones").val(answer.dimensiones),
         $("#CDescription").val(answer.description),
-        $("#CAvaliability").val(answer.avalibility),
+        $("#CAvaliability").val(answer.availability),
         $("#CPrice").val(answer.price),
         $("#CQuantity").val(answer.quantity),
         $("#CPhotography").val(answer.photography);
