@@ -26,7 +26,8 @@
 
 function getTools() {
   $.ajax({
-    url: "http://localhost:8080/api/cookware/all",
+    url:"http://150.230.86.64:81/api/cookware/all",
+    //url: "http://localhost:8080/api/cookware/all",
     type: "GET",
     contentType: "JSON",
     success: function (answer) {
@@ -78,7 +79,8 @@ function createTool() {
     photography: $("#CPhotography").val(),
   };
   $.ajax({
-    url: "http://localhost:8080/api/cookware/new",
+    url: "http://150.230.86.64:81/api/cookware/new",
+    //url: "http://localhost:8080/api/cookware/new",
     type: "POST",
     data: JSON.stringify(tool),
     contentType: "application/JSON",
@@ -103,7 +105,8 @@ function updateTool() {
     photography: $("#CPhotography").val(),
   };
   $.ajax({
-    url: "http://localhost:8080/api/cookware/update",
+    url: "http://150.230.86.64:81/api/cookware/update",
+    //url: "http://localhost:8080/api/cookware/update",
     type: "PUT",
     data: JSON.stringify(tool),
     contentType: "application/JSON",
@@ -120,7 +123,8 @@ function deleteTool(reference) {
     reference: reference,
   };
   $.ajax({
-    url: "http://localhost:8080/api/cookware/" + reference,
+    url: "http://150.230.86.64:81/api/cookware/" + reference,
+    //url: "http://localhost:8080/api/cookware/" + reference,
     type: "DELETE",
     data: JSON.stringify(toolReference),
     contentType: "application/JSON",
@@ -136,7 +140,8 @@ function getTool(reference) {
     reference: reference,
   };
   $.ajax({
-    url: "http://localhost:8080/api/cookware/" + reference,
+    url: "http://150.230.86.64:81/api/cookware/" + reference,
+    //url: "http://localhost:8080/api/cookware/" + reference,
     type: "GET",
     dataType: "JSON",
     success: function (answer) {

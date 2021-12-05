@@ -27,8 +27,8 @@
 function logIn() {
   $.ajax({
     url:
-      "http://localhost:8080/api/user/" +
-      //"http://150.230.86.64:81/api/user/" +
+      //"http://localhost:8080/api/user/" +
+      "http://150.230.86.64:81/api/user/" +
       $("#email-login").val() +
       "/" +
       $("#password-login").val(),

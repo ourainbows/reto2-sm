@@ -26,7 +26,8 @@
 
 function getUsers() {
   $.ajax({
-    url: "http://localhost:8080/api/user/all",
+    url: "http://150.230.86.64:81/api/user/all",
+    //url: "http://localhost:8080/api/user/all",
     type: "GET",
     dataType: "json",
     success: function (answer) {
@@ -76,20 +77,21 @@ function createUser() {
     type: $("#type-user").val(),
   };
   $.ajax({
-    url: "http://localhost:8080/api/user/new",
+    url: "http://150.230.86.64:81/api/user/new",
+    //url: "http://localhost:8080/api/user/new",
     type: "POST",
     data: JSON.stringify(data),
     contentType: "application/JSON",
-      complete: function () {
-        clearInputs();
-        getUsers();
+    complete: function () {
+      clearInputs();
+      getUsers();
     },
   });
 }
 function selectUser(email, password) {
   $.ajax({
-    url: "http://localhost:8080/api/user/" + email + "/" + password,
-    /* url: "http://localhost:8080/api/user/emailexist/" + email , */
+    url: "http://150.230.86.64:81/api/user/" + email + "/" + password,
+    //url: "http://localhost:8080/api/user/" + email + "/" + password,
     type: "GET",
     dataType: "json",
     success: function (answer) {
@@ -118,7 +120,8 @@ function updateUser() {
     type: $("#type-user").val(),
   };
   $.ajax({
-    url: "http://localhost:8080/api/user/update",
+    url: "http://150.230.86.64:81/api/user/update",
+    //url: "http://localhost:8080/api/user/update",
     type: "PUT",
     data: JSON.stringify(data),
     contentType: "application/JSON",
@@ -136,7 +139,8 @@ function deleteUser(idUser) {
     id: idUser,
   };
   $.ajax({
-    url: "http://localhost:8080/api/user/" + idUser,
+    url: "http://150.230.86.64:81/api/user/" + idUser,
+    //url: "http://localhost:8080/api/user/" + idUser,
     type: "DELETE",
     data: JSON.stringify(data),
     contentType: "application/JSON",
