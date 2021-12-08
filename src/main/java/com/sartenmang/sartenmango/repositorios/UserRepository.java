@@ -1,5 +1,6 @@
 package com.sartenmang.sartenmango.repositorios;
 
+import java.lang.StackWalker.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -76,4 +77,8 @@ public class UserRepository {
         return userRepositorio.findByEmailAndPassword(email, password);
     }
 
+
+    public Optional<User> lastUserId(){
+        return userRepositorio.finTopByOrderByIdDesc();
+    }
 }

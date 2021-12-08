@@ -9,7 +9,6 @@ import com.sartenmang.sartenmango.repositorios.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class UserService {
     @Autowired
@@ -24,19 +23,30 @@ public class UserService {
     }
 
     public User saveUser(User user) {
+
+        //Obtenemos el mayor id existente
+        Optional<User> userIdMaximo = userRepositorio.lastUserId();
+
+        //Si recibimos un id nulo crearemos uno nuevo basandonos en el id mas alto 
         if (user.getId() == null) {
-            return user;
-        } else {
-            Optional<User> e = userRepositorio.getUserPorId(user.getId());
-            if (e.isEmpty()) {
-                if (existeEmail(user.getEmail()) == false) {
-                    return userRepositorio.guardarUser(user);
-                } else {
-                    return user;
-                }
+            //valida el maximo id generado, en caso de que no haya creara uno a partir de 1 
+            if (userIdMaximo.isEmpty()) {
+                user.setId(1);
+                //en caso de que si tengamos usuarios existentes le sumamos uno al mayor para nuestro nuevo dato 
+            } else {
+                user.setId(userIdMaximo.get().getId() + 1);
+            }
+        }
+
+        Optional<User> e = userRepositorio.getUserPorId(user.getId());
+        if (e.isEmpty()) {
+            if (existeEmail(user.getEmail()) == false) {
+                return userRepositorio.guardarUser(user);
             } else {
                 return user;
             }
+        } else {
+            return user;
         }
     }
 
@@ -49,12 +59,12 @@ public class UserService {
             if (user.getName() != null) {
                 oUser.get().setName(user.getName());
             }
-/*             if (user.getBirthtDay() != null) {
+            if (user.getBirthtDay() != null) {
                 oUser.get().setBirthtDay(user.getBirthtDay());
             }
             if (user.getMonthBirthtDay() != null) {
                 oUser.get().setMonthBirthtDay(user.getMonthBirthtDay());
-            } */
+            }
             if (user.getIdentification() != null) {
                 oUser.get().setIdentification(user.getIdentification());
             }
