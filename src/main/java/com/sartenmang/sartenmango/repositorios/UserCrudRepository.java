@@ -12,5 +12,5 @@ public interface UserCrudRepository extends MongoRepository<User, Integer>{
     Optional<User> findByEmailAndPassword(String email, String password);
 
     //Seleccionar el usuario con el id maximo
-    Optional<User> finTopByOrderByIdDesc();
+    Optional<User> findTopByOrderByIdDesc();
 }

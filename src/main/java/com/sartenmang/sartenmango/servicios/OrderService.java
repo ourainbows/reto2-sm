@@ -77,8 +77,8 @@ public class OrderService {
         return orderRepository.findByZone(zona);
     }
 
-    public List<Order> orderSalesManByState(String state) {
+/*     public List<Order> orderSalesManByState(String state) {
         return orderRepository.findByStatus(state);    
-    }
+    } */
 
 }

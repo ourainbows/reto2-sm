@@ -35,14 +35,14 @@ public class OrderRepository {
     }
 
     public Optional<Order> lastOrderId() {
-        return orderCrudRepository.finTopByOrderByIdDesc();
+        return orderCrudRepository.findTopByOrderByIdDesc();
     }
 
     public List<Order> findByZone(String zona) {
         return orderCrudRepository.findByZone(zona);
     }
 
-    public List<Order> findByStatus(String estado) {
+/*     public List<Order> findByStatus(String estado) {
         return orderCrudRepository.finByStatus(estado);
-    }
+    } */
 }
