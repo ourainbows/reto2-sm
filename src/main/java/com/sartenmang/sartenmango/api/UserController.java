@@ -1,6 +1,7 @@
 package com.sartenmang.sartenmango.api;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +30,11 @@ public class UserController {
     @GetMapping("/all")
     public List<User> getAll() {
         return userService.getAllUsers();
+    }
+    
+    @GetMapping("/{id}")
+    public Optional<User> getUser(@PathVariable("id") Integer id) {
+        return userService.getUser(id);
     }
 
     @PostMapping("/new")
