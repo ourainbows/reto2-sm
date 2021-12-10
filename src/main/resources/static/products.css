@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+.tools{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.tools-cards{
+    width: 15rem;
+    margin: 0.7rem;
+}

@@ -40,8 +40,11 @@ function logIn() {
         if (answer.type == "ADM") {
           $(location).attr("href", "admin.html");
         }
-        if (answer.type == "COORD" || answer.type == "ASE") {
-          $(location).attr("href", "user.html");
+        if (answer.type == "COORD") {
+          $(location).attr("href", "coord.html");
+        }
+        if (answer.type == "ASE") {
+          $(location).attr("href", "ase.html");
         }
       } else {
         $("#estadoUsuario").text("Su correo o contraseña es incorrecto");

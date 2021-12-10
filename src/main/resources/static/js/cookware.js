@@ -32,6 +32,8 @@ function getTools() {
     contentType: "JSON",
     success: function (answer) {
       drawTools(answer);
+      console.log(answer)
+      //drawCards(answer)
     },
   });
 }
