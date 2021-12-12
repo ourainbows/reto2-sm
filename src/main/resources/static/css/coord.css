@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+html {
+  font-size: 62.5%;
+}
+#nav {
+  height: 9vh;
+  background-image: linear-gradient(
+    to right,
+    #ff464c,
+    #ff4454,
+    #ff425b,
+    #ff4163,
+    #ff416a
+  );
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#nav img {
+  height: 80%;
+  width: 80%vh;
+}
+#nav p {
+  font-family: "Satisfy", cursive;
+  color: white;
+  padding: 1.0rem;
+  font-size: 3.0rem;
+}
+.pedido{
+    margin: 50px;
+}
