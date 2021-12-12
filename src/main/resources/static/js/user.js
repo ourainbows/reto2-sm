@@ -99,7 +99,7 @@ function selectUser(email, password) {
         $("#identification-user").val(answer.identification),
         $("#name-user").val(answer.name),
         $("#address-user").val(answer.address),
-        $("#cellPhone-user").val(answer.cellPhone),
+        $("#cellPhone-user").val(answer.address),
         $("#email-user").val(answer.email),
         $("#password-user").val(answer.password),
         $("#zone-user").val(answer.zone),

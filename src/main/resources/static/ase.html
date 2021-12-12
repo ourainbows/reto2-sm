@@ -14,15 +14,25 @@
     />
   </head>
   <body>
+    <header>
+      <nav id="nav">
+        <img src="./assets/sm.png" alt="Con la Sarten por el Mango" />
+        <p>Con la Sarten por el Mango</p>
+      </nav>
+    </header>
     <main>
       <div class="row">
-        <div class="col-8" id="cards" style="background-color: blue">"."</div>
-        <aside class="col-4" style="background-color: rgb(94, 255, 0)">
-          "."
+        <div class="col-8" id="cards"></div>
+        <aside class="col-4" id="aside">
+          <button
+            class="btn btn-primary btn-lg"
+            id="solicitar"
+            onclick="solicitar()"
+          >
+            SOLICITAR
+          </button>
+          <div class="productos-Car"></div>
         </aside>
-      </div>
-      <div>
-        <button onclick="getCards()">Dibujar</button>
       </div>
     </main>
   </body>
@@ -31,6 +41,7 @@
     type="text/javascript"
     src="/webjars/bootstrap/js/bootstrap.min.js"
   ></script>
-   <script src="./js/cookware.js"></script>
+  <script src="./js/cookware.js"></script>
   <script src="./products.js"></script>
+  <script src="./login.js"></script>
 </html>

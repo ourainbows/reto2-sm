@@ -1,15 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 * {
-    box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
 }
-
-.tools{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+#nav {
+  height: 9vh;
+  background-image: linear-gradient(
+    to right,
+    #ff464c,
+    #ff4454,
+    #ff425b,
+    #ff4163,
+    #ff416a
+  );
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.tools-cards{
-    width: 15rem;
-    margin: 0.7rem;
+#nav img {
+  height: 80%;
+  width: 80%vh;
+}
+#nav p {
+  font-family: "Satisfy", cursive;
+  color: white;
+  padding: 1rem;
+  font-size: 3rem;
+}
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.tools-cards {
+  width: 18rem;
+  margin: 0.7rem;
+}
+.carCard {
+  max-width: 540px;
+}
+#cards {
+  background-color: #ededed;
+}
+#aside {
+  background-color: #dadada;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #c0c0c0;
+}
+#cards,
+#aside {
+  padding-top: 3rem;
+}
+#solicitar {
+  width: 96%;
+  margin: 0.7rem;
 }
