@@ -5,17 +5,21 @@ function getOrdenes(zona) {
         type: "GET",
         dataType: "json",
         success: function (answer) {
-            console.log(answer)
             drawOrders(answer);
         },
     });
 }
 function drawOrders(orders) {
+    console.log("hi")
     for (i = 0; i < orders.length; i++) {
         let pedidos = "<div class='card pedido' style='width: 18rem;'>"
         pedidos += "<div class='card-body'>"
         pedidos += "<h5 class='card-title'>" + orders[i].salesMan.name+"</h5>"
         pedidos += "<h5 class='card-subtitle mb-2 text-muted'>" + orders[i].registerDay + "</h5>"
+        console.log(orders[i].quantities)
+        /* for (j = 0; j < orders[i].quantities.length; j++){
+            pedidos += "<h1 class='card-text'>" + orders[i].quantities[j] + "</h1>"
+        } */
         pedidos += "<p class='card-text'>" + JSON.stringify(orders[i].quantities)  + "</p>"
         pedidos += "<button class='btn btn-primary' onclick='updateOrder(" + orders[i].id + ")'>Aprobar</button>"
         /*  pedidos += "<select class='form-control' id='select-" + orders.id + "'>"
