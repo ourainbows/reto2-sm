@@ -1,7 +1,7 @@
 function getOrdenes(zona) {
     $.ajax({
-        //url: "http://150.230.86.64:81/api/order/zona"+ zona,
-        url: "http://localhost:8080/api/order/zona/" + zona,
+        url: "http://150.230.86.64:81/api/order/zona"+ zona,
+        //url: "http://localhost:8080/api/order/zona/" + zona,
         type: "GET",
         dataType: "json",
         success: function (answer) {
@@ -38,8 +38,8 @@ function updateOrder(idOrden) {
         status: "Aprobada"
     }
     $.ajax({
-        //url: "http://150.230.86.64:81/api/user/update",
-        url: "http://localhost:8080/api/order/update",
+        url: "http://150.230.86.64:81/api/user/update",
+        //url: "http://localhost:8080/api/order/update",
         type: "PUT",
         data: JSON.stringify(orden),
         contentType: "application/JSON",

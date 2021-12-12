@@ -6,8 +6,8 @@ let cantidades = {}
 
 function getCards() {
     $.ajax({
-        //url: "http://150.230.86.64:81/api/cookware/all",
-        url: "http://localhost:8080/api/cookware/all",
+        url: "http://150.230.86.64:81/api/cookware/all",
+        //url: "http://localhost:8080/api/cookware/all",
         type: "GET",
         contentType: "JSON",
         success: function (answer) {
@@ -47,8 +47,8 @@ function addCar(reference) {
             reference: reference,
         };
         $.ajax({
-            //url: "http://150.230.86.64:81/api/cookware/" + reference,
-            url: "http://localhost:8080/api/cookware/" + reference,
+            url: "http://150.230.86.64:81/api/cookware/" + reference,
+            //url: "http://localhost:8080/api/cookware/" + reference,
             type: "GET",
             dataType: "JSON",
             success: function (answer) {
@@ -91,8 +91,8 @@ function salesMan() {
     let email = localStorage.getItem("correo")
     let password = localStorage.getItem("contraseña")
     $.ajax({
-        //url: "http://150.230.86.64:81/api/user/" + email + "/" + password,
-        url: "http://localhost:8080/api/user/" + email + "/" + password,
+        url: "http://150.230.86.64:81/api/user/" + email + "/" + password,
+        //url: "http://localhost:8080/api/user/" + email + "/" + password,
         type: "GET",
         dataType: "json",
         success: function (answer) {
@@ -130,8 +130,8 @@ function getProduct(reference) {
         reference: reference,
     };
     $.ajax({
-        //url: "http://150.230.86.64:81/api/cookware/" + reference,
-        url: "http://localhost:8080/api/cookware/" + reference,
+        url: "http://150.230.86.64:81/api/cookware/" + reference,
+        //url: "http://localhost:8080/api/cookware/" + reference,
         type: "GET",
         dataType: "JSON",
         async: false,
@@ -162,8 +162,8 @@ function solicitar() {
         quantities: cantidadProductos(),
     }
     $.ajax({
-        //url: "http://150.230.86.64:81/api/user/new",
-        url: "http://localhost:8080/api/order/new",
+        url: "http://150.230.86.64:81/api/user/new",
+        //url: "http://localhost:8080/api/order/new",
         type: "POST",
         data: JSON.stringify(pedido),
         contentType: "application/JSON",
