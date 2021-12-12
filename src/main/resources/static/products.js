@@ -1,4 +1,7 @@
 let onCar = []
+let saleMan = {}
+let cantidades = {}
+
 
 
 function getCards() {
@@ -73,6 +76,7 @@ function addCar(reference) {
     }
 }
 
+
 function deleteCar(reference) {
     $("#" + reference).remove()
     let indexReference = onCar.indexOf(reference)
@@ -83,7 +87,6 @@ function deleteCar(reference) {
 }
 
 
-let saleMan = {}
 function salesMan() {
     let email = localStorage.getItem("correo")
     let password = localStorage.getItem("contraseña")
@@ -110,46 +113,19 @@ function salesMan() {
     });
 }
 
-function solicitar() {
-    let apb = allProductsToBuy()
-    let c = cantidades
-    let json = JSON.stringify(c)
-    let pedido = {
-        registerDay: new Date().toISOString().slice(0, 10),
-        status: "Pendiente",
-        salesMan: saleMan,
-        products:{},
-        quantities: {"AP-904": 1}
-    }
-    console.log(typeof(pedido), typeof(apb), typeof(c), typeof(cantidades))
-    $.ajax({
-        //url: "http://150.230.86.64:81/api/user/new",
-        url: "http://localhost:8080/api/order/new",
-        type: "POST",
-        data: JSON.stringify(pedido),
-        contentType: "application/JSON",
-        dataType: "json",
-        complete: function () {
-            console.log("SIIIIIIUUUU")
-        },
-    });
-    console.log(pedido)
-}
-
-getCards()
-salesMan()
-
-let cantidades = {}
-let allProducts = {}
 
 function allProductsToBuy() {
+    let allProducts = new Object
     for (i = 0; i < onCar.length; i++) {
-        getProduct(onCar[i])
+        let pdt = { [onCar[i]]: getProduct(onCar[i]) }
+        Object.assign(allProducts, pdt)
     }
     return allProducts
 }
 
+
 function getProduct(reference) {
+    var data = null
     let toolReference = {
         reference: reference,
     };
@@ -158,12 +134,44 @@ function getProduct(reference) {
         url: "http://localhost:8080/api/cookware/" + reference,
         type: "GET",
         dataType: "JSON",
+        async: false,
         success: function (answer) {
-            let pOb = { [answer.reference]: answer }
-            $.extend(allProducts, pOb)
+            data = answer
+        },
+    });
+    return data 
+}
 
-            let cantidad = { [answer.reference]: $("#input-" + answer.reference).val() }
-            Object.assign(cantidades, cantidad)
+
+function cantidadProductos() {
+    let cantidad = new Object
+    for (i = 0; i < onCar.length; i++){
+        let rfce = { [onCar[i]]: parseInt($("#input-" + onCar[i]).val()) }
+        Object.assign(cantidad, rfce)
+    }
+    return cantidad
+}
+
+
+function solicitar() {
+    let pedido = {
+        registerDay: new Date().toISOString().slice(0, 10),
+        status: "Pendiente",
+        salesMan: saleMan,
+        products: allProductsToBuy(),
+        quantities: cantidadProductos(),
+    }
+    $.ajax({
+        //url: "http://150.230.86.64:81/api/user/new",
+        url: "http://localhost:8080/api/order/new",
+        type: "POST",
+        data: JSON.stringify(pedido),
+        contentType: "application/JSON",
+        dataType: "json",
+        complete: function () {
         },
     });
 }
+
+getCards()
+salesMan()
