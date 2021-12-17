@@ -15,8 +15,8 @@ public interface OrderCrudRepository extends MongoRepository<Order, Integer>{
     List<Order> findByZone(final String zone);
 
     //Retornar las ordenes por estado (Pendiente, Aprobada, Rechazada)
-    /* @Query
-    List<Order> finByStatus(final String status); */
+    @Query("{status: ?0}")
+    List<Order> finByStatus(final String status);
 
     // Seleccionar la orden con el id maximo
     Optional<Order> findTopByOrderByIdDesc();

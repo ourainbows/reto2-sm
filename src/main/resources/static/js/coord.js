@@ -10,7 +10,7 @@ function getOrdenes(zona) {
     });
 }
 function drawOrders(orders) {
-    console.log("hi")
+    console.log(orders)
     for (i = 0; i < orders.length; i++) {
         let pedidos = "<div class='card pedido' style='width: 18rem;'>"
         pedidos += "<div class='card-body'>"
