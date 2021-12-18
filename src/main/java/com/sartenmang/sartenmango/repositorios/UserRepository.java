@@ -78,7 +78,11 @@ public class UserRepository {
     }
 
 
-    public Optional<User> lastUserId(){
+    public Optional<User> lastUserId() {
         return userRepositorio.findTopByOrderByIdDesc();
+    }
+    
+    public List<User> birthtDayList(String monthBirthtDay) {
+        return userRepositorio.findByMonthBirthtDay(monthBirthtDay);
     }
 }

@@ -1,5 +1,6 @@
 package com.sartenmang.sartenmango.repositorios;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.sartenmang.sartenmango.entidades.User;
@@ -13,4 +14,6 @@ public interface UserCrudRepository extends MongoRepository<User, Integer>{
 
     //Seleccionar el usuario con el id maximo
     Optional<User> findTopByOrderByIdDesc();
+
+    List<User> findByMonthBirthtDay(String monthBirthtDay);
 }

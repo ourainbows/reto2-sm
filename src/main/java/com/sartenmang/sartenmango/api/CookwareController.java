@@ -54,4 +54,13 @@ public class CookwareController {
         cService.deleteTool(idCookware);
     }
 
+    @GetMapping("/price/{price}")
+    public List<Cookware> gadgetsByPrice(@PathVariable("price") double precio) {
+        return cService.gadgetsByPrice(precio);
+    }
+
+    @GetMapping("/description/{description}")
+    public List<Cookware> findByDescriptionLike(@PathVariable("description") String description) {
+        return cService.findByDescriptionLike(description);
+    }
 }

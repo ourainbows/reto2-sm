@@ -75,4 +75,12 @@ public class CookwareService {
             cRepository.deleteTool(reference);
         }
     }
+
+    public List<Cookware> gadgetsByPrice(double price) {
+        return cRepository.gadgetsByPrice(price);
+    }
+
+    public List<Cookware> findByDescriptionLike(String description) {
+        return cRepository.findByDescriptionLike(description);
+    }
 }

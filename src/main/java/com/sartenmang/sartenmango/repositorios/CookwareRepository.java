@@ -33,4 +33,13 @@ public class CookwareRepository{
     public void deleteTool(String reference) {
         cRepository.deleteById(reference);
     }
+    
+    public List<Cookware> gadgetsByPrice(double precio) {
+        return cRepository.findByPriceLessThanEqual(precio);
+    }
+
+    // Reto 5
+    public List<Cookware> findByDescriptionLike(String description) {
+        return cRepository.findByDescriptionLike(description);
+    }
 }
