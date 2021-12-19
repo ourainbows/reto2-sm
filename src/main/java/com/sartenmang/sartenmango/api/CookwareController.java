@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/cookware")
+@CrossOrigin("*")
 public class CookwareController {
     @Autowired
     private CookwareService cService;
